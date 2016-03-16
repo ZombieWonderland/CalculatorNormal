@@ -22,7 +22,13 @@ class CalculatorViewController: UIViewController {
             return Double(display.text!)!
         }
         set {
-            display.text = "\(newValue)"
+            // remove ".0" from display
+            if newValue == floor(newValue) {
+                display.text = "\(Int(newValue))"
+            } else {
+                display.text = "\(newValue)"
+            }
+            
             userIsInTheMiddleOfTypingANumber = false
         }
     }
