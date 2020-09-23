@@ -34,7 +34,7 @@ class CalculatorViewController: UIViewController {
     }
     
     // User taps a number
-    @IBAction func appendDigit(sender: UIButton) {
+    @IBAction func appendDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         if userIsInTheMiddleOfTypingANumber {
              display.text! += digit
@@ -45,7 +45,7 @@ class CalculatorViewController: UIViewController {
     }
     
     // User taps an operator
-    @IBAction func operate(sender: UIButton) {
+    @IBAction func operate(_ sender: UIButton) {
         userIsInTheMiddleOfTypingANumber = false
         operatorSymbol = sender.currentTitle!
         operandStack.append(displayValue)
